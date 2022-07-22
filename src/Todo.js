@@ -1,3 +1,4 @@
+// imports
 import React, { useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { addTodo, removeOne, clearTodo } from './features/todoSlice'
@@ -7,6 +8,7 @@ function Todo() {
     const dispatch = useDispatch()
     const [input, setInput] = useState('')
 
+    // render items and click to remove one
     const renderItems = items.map((item, index) => <li key={index} onClick={() => dispatch(removeOne(index))}>{item}</li>)
 
     const submitForm = (e) => {
